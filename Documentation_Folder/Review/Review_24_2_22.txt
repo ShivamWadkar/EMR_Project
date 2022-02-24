@@ -1,0 +1,13 @@
+              ******************************* EMR PROJECT ***********************************
+         
+     CHANGES :
+      
+           BACKEND : SpringBoot and Java                   =====  [ Shivam ,Omkar ,Sahil ]
+                    
+                        1. Create a POJO , DAO Classes , Controller of every tables 
+            
+   
+           FRONTEND : HTML and CSS                         ====== [ Akshay ,Shubhada ]
+         
+                        1. Select Free CSS template and Download it.
+                        2. Do Some changes if you want and Create some HTML pages (Login ,index,signup)                  
