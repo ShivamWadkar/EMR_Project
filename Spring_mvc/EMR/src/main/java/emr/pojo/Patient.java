@@ -1,4 +1,4 @@
-package com.emr.pojo;
+package emr.pojo;
 
 import java.sql.Blob;
 import java.sql.Date;
@@ -138,6 +138,15 @@ public class Patient {
 	public void setProfilePhoto(Blob profilePhoto) {
 		this.profilePhoto = profilePhoto;
 	}
+
+	@Override
+	public String toString() {
+		return "Patient [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", dateOfBirth=" + dateOfBirth + ", phoneNo=" + phoneNo + ", address=" + address + ", bloodGroup="
+				+ bloodGroup + ", loginId=" + loginId + ", password=" + password + ", profilePhoto=" + profilePhoto
+				+ "]";
+	}
+	
 	
 	
 }
