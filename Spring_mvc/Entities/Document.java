@@ -32,12 +32,12 @@ public class Document {
 	@Column(name = "document",columnDefinition = "MEDIUMBLOB",nullable = false)
 	private Blob document;
 	
-	@Column(name = "date")
-	private Date date;
+	@Column(name = "document_date")
+	private Date documentDate;
 	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "patient_id")
-	private int patientId;
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinColumn(name = "patient_id",referencedColumnName = "patient_id")
+	private Patient patient;
 
 	public int getId() {
 		return id;
@@ -71,27 +71,37 @@ public class Document {
 		this.document = document;
 	}
 
-	public Date getDate() {
-		return date;
+	
+
+	public Date getDocumentDate() {
+		return documentDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDocumentDate(Date documentDate) {
+		this.documentDate = documentDate;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public Patient getPatient() {
+		return patient;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
+	}
+
+	public Patient getPatientId() {
+		return patient;
+	}
+
+	public void setPatientId(Patient patient) {
+		this.patient = patient;
 	}
 
 	@Override
 	public String toString() {
 		return "Document [id=" + id + ", documentType=" + documentType + ", documentDescription=" + documentDescription
-				+ ", document=" + document + ", date=" + date + ", patientId=" + patientId + "]";
+				+ ", document=" + document + ", documentDate=" + documentDate + ", patient=" + patient + "]";
 	}
-	
 
+	
 }

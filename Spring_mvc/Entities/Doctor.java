@@ -1,14 +1,19 @@
 package emr.pojo;
 
 import java.sql.Blob;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="doctor_info_tbl")
 public class Doctor {
 
 	@Id
@@ -50,16 +55,8 @@ public class Doctor {
 	@Lob
 	private Blob profilePhoto;
 	
-	@OneToMany
-	private Access access;
-
-	public Access getAccess() {
-		return access;
-	}
-
-	public void setAccess(Access access) {
-		this.access = access;
-	}
+	@OneToMany(mappedBy = "doctor")
+	private Set<Access> access;
 
 	public int getId() {
 		return id;
@@ -157,13 +154,23 @@ public class Doctor {
 		this.profilePhoto = profilePhoto;
 	}
 
+	public Set<Access> getAccess() {
+		return access;
+	}
+
+	public void setAccess(Set<Access> access) {
+		this.access = access;
+	}
+
 	@Override
 	public String toString() {
 		return "Doctor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", education=" + education + ", specialization=" + specialization + ", experience=" + experience
 				+ ", contact=" + contact + ", email=" + email + ", loginId=" + loginId + ", password=" + password
-				+ ", profilePhoto=" + profilePhoto + "]";
+				+ ", profilePhoto=" + profilePhoto + ", access=" + access + "]";
 	}
+
+	
 
 	
 }

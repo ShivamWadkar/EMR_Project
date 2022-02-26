@@ -2,6 +2,7 @@ package emr.pojo;
 
 import java.sql.Blob;
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -51,24 +52,22 @@ public class Patient {
 	@Column(name="profile_photo",columnDefinition = "MEDIUMBLOB")
 	@Lob
 	private Blob profilePhoto;
-	
-	@OneToMany
-	private Document document;
-	
-	@OneToMany
-	private Access access;
-	
-	@OneToMany
-	private Event event;
-	
 
-	public Document getDocument() {
+	@OneToMany(mappedBy = "patient")
+	private Set<Document> document;
+	
+	@OneToMany(mappedBy = "patient")
+	private Set<Event> event;
+	
+	
+	public Set<Document> getDocument() {
 		return document;
 	}
 
-	public void setDocument(Document document) {
+	public void setDocument(Set<Document> document) {
 		this.document = document;
 	}
+
 
 	public int getId() {
 		return id;
@@ -146,14 +145,6 @@ public class Patient {
 		return password;
 	}
 
-	public Event getEvent() {
-		return event;
-	}
-
-	public void setEvent(Event event) {
-		this.event = event;
-	}
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
@@ -166,25 +157,13 @@ public class Patient {
 		this.profilePhoto = profilePhoto;
 	}
 
-	public Access getAccess() {
-		return access;
-	}
-
-	public void setAccess(Access access) {
-		this.access = access;
-	}
-
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", dateOfBirth=" + dateOfBirth + ", phoneNo=" + phoneNo + ", address=" + address + ", bloodGroup="
 				+ bloodGroup + ", loginId=" + loginId + ", password=" + password + ", profilePhoto=" + profilePhoto
-				+ ", document=" + document + ", event=" + event + "]";
+				+ "]";
 	}
-
-	
-
-	
 	
 	
 	

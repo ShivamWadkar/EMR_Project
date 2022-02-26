@@ -22,11 +22,11 @@ public class Access {
 	
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "patient_id")
-	private int patientId;
+	private Patient patient;
 	
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "doctor_id")
-	private int doctorId;
+	private Doctor doctor;
 	
 	@Column(name = "access_status")
 	private int accessStatus;
@@ -39,20 +39,20 @@ public class Access {
 		this.id = id;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public Patient getPatient() {
+		return patient;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 
-	public int getDoctorId() {
-		return doctorId;
+	public Doctor getDoctor() {
+		return doctor;
 	}
 
-	public void setDoctorId(int doctorId) {
-		this.doctorId = doctorId;
+	public void setDoctor(Doctor doctor) {
+		this.doctor = doctor;
 	}
 
 	public int getAccessStatus() {
@@ -65,9 +65,10 @@ public class Access {
 
 	@Override
 	public String toString() {
-		return "Access [id=" + id + ", patientId=" + patientId + ", doctorId=" + doctorId + ", accessStatus="
-				+ accessStatus + "]";
+		return "Access [id=" + id + ", patient=" + patient + ", doctor=" + doctor + ", accessStatus=" + accessStatus
+				+ "]";
 	}
+
 	
 	
 }

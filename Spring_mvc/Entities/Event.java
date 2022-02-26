@@ -29,12 +29,12 @@ public class Event {
 	@Column(name = "event_description",columnDefinition = "VARCHAR(255)",nullable = false)
 	private String eventDescription;
 
-	@Column(name = "date")
-	private Date date;
+	@Column(name = "event_date",nullable = false)
+	private Date eventDate;
 	
-	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
-	@JoinColumn(name = "patient_id")
-	private int patientId;
+	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@JoinColumn(name = "patient_id",referencedColumnName = "patient_id")
+	private Patient patient;
 
 	public int getId() {
 		return id;
@@ -60,27 +60,31 @@ public class Event {
 		this.eventDescription = eventDescription;
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getEventDate() {
+		return eventDate;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setEventDate(Date eventDate) {
+		this.eventDate = eventDate;
 	}
 
-	public int getPatientId() {
-		return patientId;
+	public Patient getPatient() {
+		return patient;
 	}
 
-	public void setPatientId(int patientId) {
-		this.patientId = patientId;
+	public void setPatient(Patient patient) {
+		this.patient = patient;
 	}
 
 	@Override
 	public String toString() {
-		return "Event [id=" + id + ", eventType=" + eventType + ", eventDescription=" + eventDescription + ", date="
-				+ date + ", patientId=" + patientId + "]";
+		return "Event [id=" + id + ", eventType=" + eventType + ", eventDescription=" + eventDescription
+				+ ", eventDate=" + eventDate + ", patient=" + patient + "]";
 	}
+
+	
+
+	
 
 	
 }
