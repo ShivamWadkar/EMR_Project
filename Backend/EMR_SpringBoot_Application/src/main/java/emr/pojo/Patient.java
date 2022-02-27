@@ -2,6 +2,7 @@ package emr.pojo;
 
 import java.sql.Blob;
 import java.sql.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -50,6 +52,22 @@ public class Patient {
 	@Column(name="profile_photo",columnDefinition = "MEDIUMBLOB")
 	@Lob
 	private Blob profilePhoto;
+
+	@OneToMany(mappedBy = "patient")
+	private Set<Document> document;
+	
+	@OneToMany(mappedBy = "patient")
+	private Set<Event> event;
+	
+	
+	public Set<Document> getDocument() {
+		return document;
+	}
+
+	public void setDocument(Set<Document> document) {
+		this.document = document;
+	}
+
 
 	public int getId() {
 		return id;
