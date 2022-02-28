@@ -15,15 +15,19 @@ import javax.persistence.Table;
 @Table(name = "access_tbl")
 public class Access {
 
+	//Primary Key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "access_id")
 	private int id;
 	
+
+	// Mapped with the patient class
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "patient_id")
 	private Patient patient;
 	
+	//Mapped with the doctor class
 	@ManyToOne(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
 	@JoinColumn(name = "doctor_id")
 	private Doctor doctor;

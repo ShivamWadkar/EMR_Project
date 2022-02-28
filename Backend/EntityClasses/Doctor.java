@@ -16,6 +16,7 @@ import javax.persistence.Table;
 @Table(name="doctor_info_tbl")
 public class Doctor {
 
+	//Primary Key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="doctor_id")
@@ -54,6 +55,7 @@ public class Doctor {
 	@Column(name="profile_photo",columnDefinition = "MEDIUMBLOB")
 	@Lob
 	private Blob profilePhoto;
+	
 	
 	@OneToMany(mappedBy = "doctor")
 	private Set<Access> access;

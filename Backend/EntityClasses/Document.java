@@ -18,6 +18,7 @@ import javax.persistence.Table;
 @Table(name = "document_tbl")
 public class Document {
 
+	//Primary key
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "document_id")
@@ -35,6 +36,7 @@ public class Document {
 	@Column(name = "document_date")
 	private Date documentDate;
 	
+	//Mapped with the patient class
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "patient_id",referencedColumnName = "patient_id")
 	private Patient patient;
