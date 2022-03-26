@@ -1,0 +1,16 @@
+                   ***************** Project EMR ******************** 
+  
+       FRONT END ==
+                   Simplify folder structure and Create Final Login pages 
+                   Do Some Changes in template       === [ Akshay and Shubhada ]                
+  
+
+                   How to login through google API   === [ Sahil and Devendra ]
+         
+     
+                   Data flow of login and Signups    === [ Shivam and Omkar ]
+
+
+
+
+
