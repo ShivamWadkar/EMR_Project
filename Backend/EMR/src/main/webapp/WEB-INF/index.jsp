@@ -82,7 +82,7 @@
                         <li><a class="nav-link" href="#about">About Us</a></li>
                        <li><a class="nav-link" href="#gallery">Gallery</a></li>
 						<li><a class="nav-link" href="/login">Login</a></li>
-						<li><a class="nav-link" href="patientOrDoctor.html">Sign up</a></li>
+						<li><a class="nav-link" href="/signup">Sign up</a></li>
 						<li><a class="nav-link" href="">Log Out</a></li>
 
                     </ul>

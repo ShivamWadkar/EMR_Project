@@ -10,20 +10,20 @@
     <meta name="keywords" content="Colorlib Templates">
 
     <!-- Title Page-->
-    <title>Au Register Forms by Colorlib</title>
+    <title>Register Forms For Patient</title>
 
     <!-- Icons font CSS-->
-    <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="Forms/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="Forms/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <!-- Font special for pages-->
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Vendor CSS-->
-    <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+    <link href="Forms/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="Forms/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="css/main.css" rel="stylesheet" media="all">
+    <link href="Forms/css/main.css" rel="stylesheet" media="all">
 </head>
 
 <body>
@@ -32,18 +32,18 @@
             <div class="card card-4">
                 <div class="card-body">
                     <h2 class="title">Patient Sign up</h2>
-                    <form method="POST">
+                    <form action="addPatient" method="POST" enctype="multipart/form-data">
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">First Name</label>
-                                    <input class="input--style-4" type="text" name="first_name">
+                                    <input class="input--style-4" type="text" name="firstName">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Last Name</label>
-                                    <input class="input--style-4" type="text" name="last_name">
+                                    <input class="input--style-4" type="text" name="lastName">
                                 </div>
                             </div>
                         </div>
@@ -52,7 +52,7 @@
                                 <div class="input-group">
                                     <label class="label">DateofBirth</label>
                                     <div class="input-group-icon">
-                                        <input class="input--style-4 js-datepicker" type="date" name="birthday">
+                                        <input class="input--style-4 js-datepicker" type="date" name="dob">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Contact No</label>
-                                    <input class="input--style-4" type="text" name="phone">
+                                    <input class="input--style-4" type="text" name="contactNo">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -96,7 +96,7 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Blood Group</label>
-                                    <input class="input--style-4" type="text" name="BG">
+                                    <input class="input--style-4" type="text" name="bloodGroup">
                                 </div>
                             </div>
                             <div class="col-2">
@@ -108,13 +108,13 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="pass">
+                                    <input class="input--style-4" type="password" name="password">
                                 </div>
                             </div>
                             <div class="col-2">
                                 <div class="input-group">
                                 <label class="form-label"  for="customFile">Profile Photo</label><br><br>
-                                <input type="file" class="form-control" id="customFile" />
+                                <input type="file" class="form-control" id="customFile" name="file" accept="image/png, image/jpeg"/>
                                 </div>
                             </div>
                         </div>
@@ -140,20 +140,6 @@
     <!-- Main JS-->
     <script src="js/global.js"></script>
 
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 
 </html>
-<!-- end document-->
-
-<!----<div class="input-group">
-                            <label class="label">Subject</label>
-                            <div class="rs-select2 js-select-simple select--no-search">
-                                <select name="subject">
-                                    <option disabled="disabled" selected="selected">Choose option</option>
-                                    <option>Subject 1</option>
-                                    <option>Subject 2</option>
-                                    <option>Subject 3</option>
-                                </select>
-                                <div class="select-dropdown"></div>
-                            </div>
-                        </div>-->

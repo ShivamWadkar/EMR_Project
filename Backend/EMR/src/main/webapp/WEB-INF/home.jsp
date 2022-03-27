@@ -28,8 +28,8 @@
 		Welcome
 		<%=p.getFirstName()%></h3>
 	
-	
-	<div >
+	</div>
+	<div style="top:03%; left:80%">
 	<%
 	Blob image = null;
 
@@ -59,7 +59,7 @@
 	%>
 </div>
 	
-</div>
+
 	
 </body>
 </html>

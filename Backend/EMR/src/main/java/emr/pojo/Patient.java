@@ -53,6 +53,9 @@ public class Patient {
 	@Lob
 	private Blob profilePhoto;
 
+	@Column(name="emailId",columnDefinition = "VARCHAR(100)",nullable = false)
+	private String emailId;
+	
 	@OneToMany(mappedBy = "patient")
 	private Set<Document> document;
 	
@@ -157,12 +160,45 @@ public class Patient {
 		this.profilePhoto = profilePhoto;
 	}
 
+	
+	
+	public String getEmailId() {
+		return emailId;
+	}
+
+	public void setEmailId(String emailId) {
+		this.emailId = emailId;
+	}
+
+	public Patient() {
+		
+	}
+	
+	
+	
+	public Patient(String firstName, String lastName, String gender, Date dateOfBirth, String phoneNo,
+			String address, String bloodGroup, String loginId, String password, Blob profilePhoto,String emailId) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.phoneNo = phoneNo;
+		this.address = address;
+		this.bloodGroup = bloodGroup;
+		this.loginId = loginId;
+		this.password = password;
+		this.profilePhoto = profilePhoto;
+		this.emailId = emailId;
+		
+	}
+
 	@Override
 	public String toString() {
 		return "Patient [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", dateOfBirth=" + dateOfBirth + ", phoneNo=" + phoneNo + ", address=" + address + ", bloodGroup="
 				+ bloodGroup + ", loginId=" + loginId + ", password=" + password + ", profilePhoto=" + profilePhoto
-				+ "]";
+				+ emailId+"]";
 	}
 	
 	
