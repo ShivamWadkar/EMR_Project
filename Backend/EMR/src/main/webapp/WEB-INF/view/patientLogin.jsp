@@ -27,12 +27,43 @@
 	<link rel="stylesheet" type="text/css" href="Forms/Login_form/css/util.css">
 	<link rel="stylesheet" type="text/css" href="Forms/Login_form/css/main.css">
 	<!--===============================================================================================-->
+	<!-- Main CSS-->
+    <link href="Forms/css/main.css" rel="stylesheet" media="all">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Pogo Slider CSS -->
+    <link rel="stylesheet" href="css/pogo-slider.min.css">
+	<!-- Site CSS -->
+    <link rel="stylesheet" href="css/style.css">    
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="css/responsive.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/custom.css">
 </head>
 
 <body>
 
+<header class="top-header">
+		<nav class="navbar header-nav navbar-expand-lg">
+            <div class="container">
+				<a class="navbar-brand" href="index.html"><img src="images/logo6.png" height="60px" alt="image"></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
+                    <ul class="navbar-nav">
+                        <li><a class="nav-link active" href="index">Home</a></li>
+						<li><a class="nav-link" href="/signup">Sign up</a></li>
+					
 
-	<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+	</header>
+	<div class="container-login100">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
 			<form action="verify" method="post" class="login100-form validate-form">
 				<span class="login100-form-title p-b-37">
@@ -82,7 +113,17 @@
 		</div>
 	</div>
 
-	
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">All Rights Reserved. &copy; 2018 <a href="#">E-Health Book</a> Design By : <a href="https://html.design/">IET CDAC Group No : 17</a></p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
 
 </body>
 

@@ -162,6 +162,29 @@ public class Doctor {
 		this.access = access;
 	}
 
+	public Doctor() {
+		
+	}
+	
+	
+	
+	public Doctor(String firstName, String lastName, String gender, String education, String specialization,
+			float experience, String contact, String email, String loginId, String password, Blob profilePhoto) {
+		
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.education = education;
+		this.specialization = specialization;
+		this.experience = experience;
+		this.contact = contact;
+		this.email = email;
+		this.loginId = loginId;
+		this.password = password;
+		this.profilePhoto = profilePhoto;
+		
+	}
+
 	@Override
 	public String toString() {
 		return "Doctor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender

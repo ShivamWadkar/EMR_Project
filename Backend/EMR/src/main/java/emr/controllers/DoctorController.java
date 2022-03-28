@@ -14,43 +14,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-import emr.dao.PatientDao;
-import emr.pojo.Patient;
-
+import emr.dao.DoctorDao;
+import emr.pojo.Doctor;
 
 @Controller
-public class WebController {
-
+public class DoctorController {
 
 	@Autowired
-	PatientDao dao;
+	DoctorDao dao;
 
-	@RequestMapping("/index")
-	public String showIndex() {
-
-		return "index";
-	}
-
-	@RequestMapping("/login")
+	@RequestMapping("/doctorLogin")
 	public String toLogin() {
 
 		return "login";
 	}
 
-	@RequestMapping("/signup")
+	@RequestMapping("/doctorSignup")
 	public String pSignUp() {
 
 		System.out.println("in signup");
 		return "patientSignup";
 	}
 
-	@PostMapping("/verify")
+	@PostMapping("/verifyDoctor")
 	public String verifyUser(Model model,@RequestParam String uname,@RequestParam String pass) {
 
-		Patient result = dao.verifyUser(uname, pass);
+		Doctor result = dao.verifyUser(uname, pass);
+		
 		if(result != null) {
 
-			model.addAttribute("patient", result);
+			model.addAttribute("doctor", result);
 			return "home";
 		}
 		else {
@@ -60,12 +53,12 @@ public class WebController {
 		}
 	}
 
-	@PostMapping("/addPatient")
-	public void addProduct(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String dob,@RequestParam String gender,@RequestParam String email,@RequestParam String contactNo,
-			@RequestParam String address,@RequestParam String bloodGroup,@RequestParam String uname,@RequestParam String password,@RequestParam("file") MultipartFile file){
+	@PostMapping("/addDoctor")
+	public String addProduct(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String gender,@RequestParam String education,@RequestParam String specialization,
+			@RequestParam float experience,@RequestParam String contact,@RequestParam String email,@RequestParam String loginId,@RequestParam String password,@RequestParam("file") MultipartFile file){
 		
 		
-		System.out.println("In add patient");
+		System.out.println("In add doctor");
 
 
 		byte[] byteArr;
@@ -73,19 +66,22 @@ public class WebController {
 		try {
 			byteArr = file.getBytes();
 			blob = new SerialBlob(byteArr);
-			dao.signUp( firstName,  lastName,  dob,  gender,  email,  contactNo,
-					address,  bloodGroup,  uname,  password,  blob, email);
+			dao.signUp( firstName,  lastName,  gender,education,specialization,experience,contact,email,
+					 loginId, password,  blob);
+			
+			return "login";
 		} catch (SQLException e) {
 
 			e.printStackTrace();
+			return "doctorSignup";
 		}
 		catch (IOException e1) {
 
 			e1.printStackTrace();
+			return "doctorSignup";
 		}
 
 
 
 	}
-
 }
