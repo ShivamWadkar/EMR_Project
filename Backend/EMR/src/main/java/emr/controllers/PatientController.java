@@ -72,7 +72,7 @@ public class PatientController {
 			dao.signUp( firstName,  lastName,  dob,  gender,  email,  contactNo,
 					address,  bloodGroup,  uname,  password,  blob, email);
 			
-			return "login";
+			return "patientLogin";
 		} catch (SQLException e) {
 
 			e.printStackTrace();
