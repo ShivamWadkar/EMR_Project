@@ -72,10 +72,23 @@
 						<li><a class="nav-link active" href="#home">Home</a></li>
 						<li><a class="nav-link" href="#about">About Us</a></li>
 						<li><a class="nav-link" href="#gallery">Gallery</a></li>
-						<li><a class="nav-link" href="/login">Login</a></li>
-						<li><a class="nav-link" href="/signup">Sign up</a></li>
 						
-
+						<div class="dropdown btn-group">
+                             <a class="nav-link" data-toggle="dropdown" href="#"> LOGIN <span class="caret"></span> </a>
+                             <ul class="dropdown-menu">
+                                <li><a href="/patient_login">PATIENT</a></li>
+                                <li><a href="/doctor_login">DOCTOR</a></li>
+                             </ul>
+                         </div>
+                         
+                         
+                         <div class="dropdown btn-group">
+                             <a class="nav-link" data-toggle="dropdown" href="#"> SIGN UP <span class="caret"></span> </a>
+                             <ul class="dropdown-menu">
+                                <li><a href="/patient_signup">PATIENT</a></li>
+                                <li><a href="/doctor_signup">DOCTOR</a></li>
+                             </ul>
+                         </div>
 					</ul>
 				</div>
 			</div>

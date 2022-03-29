@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Login Page</title>
+	<title>Doctor Login Page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -42,7 +42,6 @@
 </head>
 
 <body>
-
 <header class="top-header">
 		<nav class="navbar header-nav navbar-expand-lg">
             <div class="container">
@@ -55,7 +54,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index">Home</a></li>
-						<li><a class="nav-link" href="/signup">Sign up</a></li>
+						<li><a class="nav-link" href="/doctor_signup">Sign up</a></li>
 					
 
                     </ul>
@@ -65,9 +64,22 @@
 	</header>
 	<div class="container-login100">
 		<div class="wrap-login100 p-l-55 p-r-55 p-t-80 p-b-30">
-			<form action="verifyDoctor" method="post" class="login100-form validate-form">
+			<form action="verify_doctor" method="post" class="login100-form validate-form">
+			<div style="text-align: center;">
+				<% 
+					String msg = (String)request.getAttribute("errormsg");
+					if(msg != null){
+		
+					%>
+
+						<font color="red" > <%=msg %></font>
+
+					<%
+					}
+				%>
+				</div>
 				<span class="login100-form-title p-b-37">
-					Login
+					Doctor's Login
 				</span>
 
 				<div class="wrap-input100 validate-input m-b-20" data-validate="Enter username or email">

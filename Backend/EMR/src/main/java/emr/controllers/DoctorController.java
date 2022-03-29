@@ -23,20 +23,19 @@ public class DoctorController {
 	@Autowired
 	DoctorDao dao;
 
-	@RequestMapping("/doctorLogin")
+	@RequestMapping("/doctor_login")
 	public String toLogin() {
 
-		return "login";
+		return "doctorLogin";
 	}
 
-	@RequestMapping("/doctorSignup")
+	@RequestMapping("/doctor_signup")
 	public String pSignUp() {
 
-		System.out.println("in signup");
-		return "patientSignup";
+		return "doctorSignup";
 	}
 
-	@PostMapping("/verifyDoctor")
+	@PostMapping("/verify_doctor")
 	public String verifyUser(Model model,@RequestParam String uname,@RequestParam String pass) {
 
 		Doctor result = dao.verifyUser(uname, pass);
@@ -49,16 +48,13 @@ public class DoctorController {
 		else {
 
 			model.addAttribute("errormsg", "Wrong username or password please try again !!");
-			return "login";
+			return "doctorLogin";
 		}
 	}
 
-	@PostMapping("/addDoctor")
+	@PostMapping("/add_doctor")
 	public String addProduct(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String gender,@RequestParam String education,@RequestParam String specialization,
-			@RequestParam float experience,@RequestParam String contact,@RequestParam String email,@RequestParam String loginId,@RequestParam String password,@RequestParam("file") MultipartFile file){
-		
-		
-		System.out.println("In add doctor");
+			@RequestParam float experience,@RequestParam String contact,@RequestParam String email,@RequestParam String uname,@RequestParam String password,@RequestParam("file") MultipartFile file){
 
 
 		byte[] byteArr;
@@ -67,9 +63,9 @@ public class DoctorController {
 			byteArr = file.getBytes();
 			blob = new SerialBlob(byteArr);
 			dao.signUp( firstName,  lastName,  gender,education,specialization,experience,contact,email,
-					 loginId, password,  blob);
+					 uname, password,  blob);
 			
-			return "login";
+			return "doctorLogin";
 		} catch (SQLException e) {
 
 			e.printStackTrace();

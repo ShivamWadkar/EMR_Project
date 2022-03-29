@@ -31,20 +31,19 @@ public class PatientController {
 		return "index";
 	}
 
-	@RequestMapping("/login")
+	@RequestMapping("/patient_login")
 	public String toLogin() {
 
 		return "patientLogin";
 	}
 
-	@RequestMapping("/signup")
+	@RequestMapping("/patient_signup")
 	public String pSignUp() {
 
-		System.out.println("in signup");
 		return "patientSignup";
 	}
 
-	@PostMapping("/verify")
+	@PostMapping("/verify_patient")
 	public String verifyUser(Model model,@RequestParam String uname,@RequestParam String pass) {
 
 		Patient result = dao.verifyUser(uname, pass);
@@ -57,18 +56,14 @@ public class PatientController {
 		else {
 
 			model.addAttribute("errormsg", "Wrong username or password please try again !!");
-			return "login";
+			return "patientLogin";
 		}
 	}
 
-	@PostMapping("/addPatient")
+	@PostMapping("/add_patient")
 	public String addProduct(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String dob,@RequestParam String gender,@RequestParam String email,@RequestParam String contactNo,
 			@RequestParam String address,@RequestParam String bloodGroup,@RequestParam String uname,@RequestParam String password,@RequestParam("file") MultipartFile file){
 		
-		
-		System.out.println("In add patient");
-
-
 		byte[] byteArr;
 		Blob blob;
 		try {

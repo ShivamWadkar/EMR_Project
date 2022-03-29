@@ -34,6 +34,8 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" type="text/css" href="Forms/Login_form/css/main.css">
+    <link rel="stylesheet" type="text/css" href="Forms/Login_form/css/util.css">
 </head>
 
 <body>
@@ -49,7 +51,7 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                     <ul class="navbar-nav">
                         <li><a class="nav-link active" href="index">Home</a></li>
-						<li><a class="nav-link" href="/login">Login</a></li>
+						<li><a class="nav-link" href="/patient_login">Login</a></li>
 						
 					
 
@@ -58,20 +60,20 @@
             </div>
         </nav>
 	</header>
-    <div style="background-image: url('images/bg-01.jpg');">
+    <div class="container-login100">
         <div class="wrapper wrapper--w680">
-            <div class="card card-4">
+            <div class="card card-5">
                 <div class="card-body">
                     <h2 class="title">Patient Sign up</h2>
-                    <form action="addPatient" method="POST" enctype="multipart/form-data">
+                    <form action="add_patient" method="POST" enctype="multipart/form-data">
                         <div class="row row-space">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">First Name</label>
                                     <input class="input--style-4" type="text" name="firstName">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Last Name</label>
                                     <input class="input--style-4" type="text" name="lastName">
@@ -79,19 +81,21 @@
                             </div>
                         </div>
                         <div class="row row-space">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">DateofBirth</label>
                                     <div class="input-group-icon">
+                                    <br>
                                         <input class="input--style-4 js-datepicker" type="date" name="dob">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Gender</label>
                                     <div class="p-t-10">
+                                    <br>
                                         <label class="radio-container m-r-45">Male
                                             <input type="radio"  name="gender" value="Male"> <!--checked="checked"-->
                                             <span class="checkmark"></span>
@@ -105,38 +109,38 @@
                             </div>
                         </div>
                         <div class="row row-space">
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Email ID</label>
                                     <input class="input--style-4" type="email" name="email">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
-                                    <label class="label">Contact No</label>
+                                    <label class="label">Contact No</label><br>
                                     <input class="input--style-4" type="text" name="contactNo">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Address</label>
                                 
                                     <textarea class="input--style-4" rows="2" cols="20" name="address"></textarea>
                                 </div> <!----<input class="input--style-4" type="text" name="phone">-->
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Blood Group</label>
                                     <input class="input--style-4" type="text" name="bloodGroup">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-5">
                                 <div class="input-group">
                                     <label class="label">User Name</label>
                                     <input class="input--style-4" type="text" name="uname">
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Password</label>
                                     <input class="input--style-4" type="password" name="password">
@@ -145,14 +149,14 @@
                             <div class="col-8">
                                 <div class="input-group">
                                 <label class="form-label"  for="customFile">Profile Photo</label>
-                                <br><br>
+                                <br/>
                                 <input type="file" class="form-control" id="customFile" name="file" accept="image/png, image/jpeg"/>
                                 </div>
                             </div>
                         </div>
                         
                         
-                        <div class="p-t-15">
+                        <div class="p-t-15" style="text-align: center;">
                             <button class="btn btn--radius-2 btn--blue" type="submit">Sign Up</button>
                         </div>
                         
