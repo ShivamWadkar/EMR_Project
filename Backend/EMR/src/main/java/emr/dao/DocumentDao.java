@@ -15,6 +15,11 @@ public class DocumentDao {
 	@Autowired
 	MyDocumentRepository repo;
 	
+	public void addDocument(String type,String date,String description,Blob file) {
+		
+		
+	}
+
 	public List<Document> getAllDocument()
 	{
 		return repo.findAll();
@@ -27,11 +32,10 @@ public class DocumentDao {
 		
 	}
 	
-	
-	public void addDocument(String type,String date,String description,Blob file) {
-		
-		
-	}
+	public void deleteDocument(int id)
+	{
+		repo.deleteById(id);
+	}	
 	
 
 }
