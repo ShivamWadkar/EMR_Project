@@ -68,9 +68,6 @@
 					id="navbar-wd">
 					<ul class="navbar-nav">
 						<li><a class="nav-link active" href="index">Home</a></li>
-						<li><a class="nav-link" href="/patient_signup">Sign up</a></li>
-
-
 					</ul>
 				</div>
 			</div>
@@ -101,7 +98,7 @@
 						placeholder="username or email"> <span
 						class="focus-input100"></span>
 				</div>
-
+				
 				<div class="wrap-input100 validate-input m-b-25"
 					data-validate="Enter password">
 					<input class="input100" type="password" name="pass"
@@ -111,21 +108,9 @@
 				<div class="container-login100-form-btn">
 					<button class="login100-form-btn">Sign In</button>
 				</div>
-
-				<div class="text-center p-t-57 p-b-20">
-					<span class="txt1"> Or login with </span>
-				</div>
-
-				<div class="flex-c p-b-112">
-					<a href="#" class="login100-social-item"> <i
-						class="fa fa-facebook-f"></i>
-					</a> <a href="#" class="login100-social-item"> <img
-						src="Forms/Login_form/images/icons/icon-google.png" alt="GOOGLE">
-					</a>
-				</div>
-
+				<br/>
 				<div class="text-center">
-					<a href="#" class="txt2 hov1"> Sign Up </a>
+					<a href="/patient_signup" class="txt2 hov1"> Sign Up </a>
 				</div>
 			</form>
 

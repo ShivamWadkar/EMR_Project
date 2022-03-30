@@ -77,7 +77,7 @@
                              <a class="nav-link" data-toggle="dropdown" href="#"> LOGIN <span class="caret"></span> </a>
                              <ul class="dropdown-menu">
                                 <li><a href="/patient_login">PATIENT</a></li>
-                                <li><a href="/doctor_login">DOCTOR</a></li>
+                                <li><a href="http://localhost:3000/login">DOCTOR</a></li>
                              </ul>
                          </div>
                          
