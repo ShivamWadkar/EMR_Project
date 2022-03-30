@@ -31,6 +31,18 @@ public class PatientController {
 		return "index";
 	}
 
+	@RequestMapping("/patient_dashboard")
+	public String showDashboard() {
+
+		return "patientDashboard";
+	}
+	
+	@RequestMapping("/upload_documents")
+	public String uploadDocument() {
+
+		return "uploadDocuments";
+	}
+	
 	@RequestMapping("/patient_login")
 	public String toLogin() {
 
@@ -51,7 +63,7 @@ public class PatientController {
 		if(result != null) {
 
 			model.addAttribute("patient", result);
-			return "home";
+			return "patientDashboard";
 		}
 		else {
 
@@ -61,7 +73,7 @@ public class PatientController {
 	}
 
 	@PostMapping("/add_patient")
-	public String addProduct(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String dob,@RequestParam String gender,@RequestParam String email,@RequestParam String contactNo,
+	public String addPatient(@RequestParam String firstName,@RequestParam String lastName,@RequestParam String dob,@RequestParam String gender,@RequestParam String email,@RequestParam String contactNo,
 			@RequestParam String address,@RequestParam String bloodGroup,@RequestParam String uname,@RequestParam String password,@RequestParam("file") MultipartFile file){
 		
 		byte[] byteArr;

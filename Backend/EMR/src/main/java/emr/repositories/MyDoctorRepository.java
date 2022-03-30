@@ -1,4 +1,4 @@
-package emr;
+package emr.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -97,6 +97,23 @@ public class Document {
 		this.patient = patient;
 	}
 
+	public Document() {
+		
+	}
+	
+	
+	
+	public Document(int id, String documentType, String documentDescription, Blob document, Date documentDate,
+			Patient patient) {
+
+		this.id = id;
+		this.documentType = documentType;
+		this.documentDescription = documentDescription;
+		this.document = document;
+		this.documentDate = documentDate;
+		this.patient = patient;
+	}
+
 	@Override
 	public String toString() {
 		return "Document [id=" + id + ", documentType=" + documentType + ", documentDescription=" + documentDescription

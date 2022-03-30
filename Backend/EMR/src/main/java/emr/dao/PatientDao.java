@@ -6,8 +6,8 @@ import java.sql.Date;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import emr.MyPatientRepository;
 import emr.pojo.Patient;
+import emr.repositories.MyPatientRepository;
 
 
 @Repository

@@ -5,8 +5,8 @@ import java.sql.Blob;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import emr.MyDoctorRepository;
 import emr.pojo.Doctor;
+import emr.repositories.MyDoctorRepository;
 
 
 @Repository
