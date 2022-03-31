@@ -88,7 +88,10 @@
 
 					<%
 					}
+					
+					//String loginId = (String)session.getAttribute("uname");
 				%>
+				<!--  <p><%-- loginId --%></p>  -->
 				</div>
 				<span class="login100-form-title p-b-37"> Patient's Login </span>
 

@@ -98,7 +98,7 @@
                             <div class="col-lg-12 col-sm-12">
                                         <div class="form-group">
                                             <label>Document Type *</label>
-                                           <select name="type">
+                                           <select name="documentType">
                                            	  <option value="select" >-- Select --</option>
 											  <option value="prescription" >Prescription</option>
 											  <option value="test" >Test Report</option>
@@ -111,17 +111,17 @@
                                         <div class="form-group" style="position:relative;">
                                             <label>Scanned Documents</label>
                                             <div class="form-line">
-                                               <input type="file" name="imgs[]" class="form-control" accept="image/gif, image/png, image/jpg, image/jpeg" style="opacity:1; position:relative;" multiple>
+                                               <input type="file" name="file" class="form-control" accept="image/gif, image/png, image/jpg, image/jpeg" style="opacity:1; position:relative;" multiple>
                                             </div>
                                             <button type="button" id="Clear" class="btn btn-xs btn-link" style="display:none; position:absolute; top:-10px; right:0px;" onclick="$('input[name=\'imgs[]\']').val(''); $(this).hide()">Clear Files</button>
                                         </div>
                                     </div>
                             <div class="col-6">
                                 <div class="input-group">
-                                    <label class="label">DateofBirth</label>
+                                    <label class="label">Date</label>
                                     <div class="input-group-icon">
                                     <br>
-                                        <input class="input--style-4 js-datepicker" type="date" name="dob">
+                                        <input class="input--style-4 js-datepicker" type="date" name="documentDate">
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@
                                         <div class="form-group">
                                             <label>Description</label>
                                             <div class="form-line">
-                                                <textarea rows="3" cols="2" name="info" class="form-control no-resize auto-growth"></textarea>
+                                                <textarea rows="3" cols="2" name="description" class="form-control no-resize auto-growth"></textarea>
                                             </div>
                                         </div>
                                     </div>
