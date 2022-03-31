@@ -54,11 +54,6 @@ public class PatientController {
 
 		return "patientSignup";
 	}
-	@RequestMapping("/edit_patient_profile")
-	public String peditProfile() {
-
-		return "editpatientprofile";
-	}
 
 	@PostMapping("/verify_patient")
 	public String verifyUser(Model model,@RequestParam String uname,@RequestParam String pass) {

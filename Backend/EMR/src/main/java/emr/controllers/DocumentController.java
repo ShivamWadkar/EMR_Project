@@ -65,12 +65,9 @@ public class DocumentController {
 			e1.printStackTrace();
 			return "patientSignup";
 		}
-	}
-	
-	@DeleteMapping("/deleteDocument/{id}")
-	public void deleteDocument(@PathVariable("id") int id)
-	{
-		dao.deleteDocument(id);
+
+
+
 	}
 
 }
