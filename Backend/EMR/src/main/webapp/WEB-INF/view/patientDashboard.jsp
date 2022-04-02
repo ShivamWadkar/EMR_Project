@@ -99,7 +99,7 @@
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="upload_documents">New
 										Prescription</a></li>
-								
+
 							</ul>
 						</div>
 
@@ -111,12 +111,16 @@
 							<ul class="dropdown-menu">
 								<li><a class="nav-link" href="upload_documents">New
 										Test</a></li>
-								
+
 							</ul>
 						</div>
 						<div class="dropdown btn-group">
-							<a class="nav-link" href="getalldocuments">View Documents</a>
-							
+							<a class="nav-link" href="getalldocuments">VIEW DOCUMENTS</a>
+
+						</div>
+						<div class="dropdown btn-group">
+							<a class="nav-link" href="/access_control">ACCESS CONTROL</a>
+
 						</div>
 						<li><a class="nav-link" href="signOut">LOGOUT</a></li>
 					</ul>
@@ -125,7 +129,7 @@
 		</nav>
 	</header>
 	<!-- End header -->
-<body>
+
 	<div style="text-align: center;">
 		<%
 		PatientDto p = (PatientDto) request.getAttribute("patient");
@@ -234,64 +238,46 @@
 					</div>
 				</div>
 			</section>
-
-
-
-
-
-
-
-
-			<!-- Analytics -->
-
-
-			<!-- end profile -->
-
-
-
-
-
-
-
-
-
-
-			<!-- Start Footer -->
-			<footer class="footer-box">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<p class="footer-company-name">
-								All Rights Reserved. &copy; 2018 <a href="#">E-Health Book</a>
-								Design By : <a href="https://html.design/">IET CDAC Group No
-									: 17</a>
-							</p>
-						</div>
-					</div>
-				</div>
-			</footer>
-			<!-- End Footer -->
 		</div>
-		<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i
-			class="fa fa-angle-up"></i></a> <a href="#" id="scroll-to-top"
-			class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
+	</div>
 
-		<!-- ALL JS FILES -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/popper.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-		<!-- ALL PLUGINS -->
-		<script src="js/jquery.magnific-popup.min.js"></script>
-		<script src="js/jquery.pogo-slider.min.js"></script>
-		<script src="js/slider-index.js"></script>
-		<script src="js/smoothscroll.js"></script>
-		<script src="js/TweenMax.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/owl.carousel.min.js"></script>
-		<script src="js/form-validator.min.js"></script>
-		<script src="js/contact-form-script.js"></script>
-		<script src="js/isotope.min.js"></script>
-		<script src="js/images-loded.min.js"></script>
-		<script src="js/custom.js"></script>
+	<!-- Start Footer -->
+	<footer class="footer-box">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="footer-company-name">
+						All Rights Reserved. &copy; 2018 <a href="#">E-Health Book</a>
+						Design By : <a href="https://html.design/">IET CDAC Group No :
+							17</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- End Footer -->
+
+	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i
+		class="fa fa-angle-up"></i></a>
+	<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i
+		class="fa fa-angle-up"></i></a>
+
+	<!-- ALL JS FILES -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<!-- ALL PLUGINS -->
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/jquery.pogo-slider.min.js"></script>
+	<script src="js/slider-index.js"></script>
+	<script src="js/smoothscroll.js"></script>
+	<script src="js/TweenMax.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/form-validator.min.js"></script>
+	<script src="js/contact-form-script.js"></script>
+	<script src="js/isotope.min.js"></script>
+	<script src="js/images-loded.min.js"></script>
+	<script src="js/custom.js"></script>
 </body>
 </html>

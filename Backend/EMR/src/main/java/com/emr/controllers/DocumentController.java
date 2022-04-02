@@ -123,7 +123,7 @@ public class DocumentController {
 				System.out.println("After deleting the document !!!!");
 				
 				
-				return "patientLogin";
+				return "redirect:/getalldocuments";
 			}
 			catch (Exception e) {
 

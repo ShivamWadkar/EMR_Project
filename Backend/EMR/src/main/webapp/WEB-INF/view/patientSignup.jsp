@@ -70,13 +70,13 @@
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">First Name</label>
-                                    <input class="input--style-4" type="text" name="firstName">
+                                    <input class="input--style-4" type="text" name="firstName" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Last Name</label>
-                                    <input class="input--style-4" type="text" name="lastName">
+                                    <input class="input--style-4" type="text" name="lastName" required>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +86,7 @@
                                     <label class="label">DateofBirth</label>
                                     <div class="input-group-icon">
                                     <br>
-                                        <input class="input--style-4 js-datepicker" type="date" name="dob">
+                                        <input class="input--style-4 js-datepicker" type="date" name="dob" required>
                                         <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
                                     </div>
                                 </div>
@@ -112,45 +112,45 @@
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Email ID</label>
-                                    <input class="input--style-4" type="email" name="email">
+                                    <input class="input--style-4" type="email" name="email" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Contact No</label><br>
-                                    <input class="input--style-4" type="text" name="contactNo">
+                                    <input class="input--style-4" type="text" name="contactNo" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Address</label>
                                 
-                                    <textarea class="input--style-4" rows="2" cols="20" name="address"></textarea>
+                                    <textarea class="input--style-4" rows="2" cols="20" name="address" required></textarea>
                                 </div> <!----<input class="input--style-4" type="text" name="phone">-->
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Blood Group</label>
-                                    <input class="input--style-4" type="text" name="bloodGroup">
+                                    <input class="input--style-4" type="text" name="bloodGroup" required>
                                 </div>
                             </div>
                             <div class="col-5">
                                 <div class="input-group">
                                     <label class="label">User Name</label>
-                                    <input class="input--style-4" type="text" name="uname">
+                                    <input class="input--style-4" type="text" name="uname" required>
                                 </div>
                             </div>
                             <div class="col-6">
                                 <div class="input-group">
                                     <label class="label">Password</label>
-                                    <input class="input--style-4" type="password" name="password">
+                                    <input class="input--style-4" type="password" name="password" required>
                                 </div>
                             </div>
                             <div class="col-8">
                                 <div class="input-group">
                                 <label class="form-label"  for="customFile">Profile Photo</label>
                                 <br/>
-                                <input type="file" class="form-control" id="customFile" name="file" accept="image/png, image/jpeg"/>
+                                <input type="file" class="form-control" id="customFile" name="file" accept="image/png, image/jpeg" required/>
                                 </div>
                             </div>
                         </div>

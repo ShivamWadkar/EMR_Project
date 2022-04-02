@@ -91,8 +91,9 @@ public class DoctorController {
 	@PostMapping("/verify_doctor")
 	public String verifyUser(Model model,@RequestParam String uname,@RequestParam String pass) {
 
+		System.out.println("In verify doctor");
 		DoctorDto result = dao.verifyUser(uname, pass);
-		
+		System.out.println("Doctor verified");
 		if(result != null) {
 
 			model.addAttribute("doctor", result);
@@ -176,8 +177,10 @@ public class DoctorController {
 	public String signOut(Model model,HttpServletRequest request){
 		HttpSession session=request.getSession(); 
 
-		session.removeAttribute("uname");   
-		session.invalidate(); 
+		//session.removeAttribute("uname"); 
+		session.setAttribute("uname", null); 
+		//session.invalidate(); 
+		
 		System.out.println("session id after invalidating session is:"+session.getId()); 
 
 		return "index";

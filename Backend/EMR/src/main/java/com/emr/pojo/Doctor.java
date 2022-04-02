@@ -190,7 +190,7 @@ public class Doctor {
 		return "Doctor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
 				+ ", education=" + education + ", specialization=" + specialization + ", experience=" + experience
 				+ ", contact=" + contact + ", email=" + email + ", loginId=" + loginId + ", password=" + password
-				+ ", profilePhoto=" + profilePhoto + ", access=" + access + "]";
+				+ ", profilePhoto=" + profilePhoto + "]";
 	}
 
 	

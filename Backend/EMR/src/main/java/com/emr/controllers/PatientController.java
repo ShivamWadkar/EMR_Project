@@ -49,6 +49,8 @@ public class PatientController {
 			return "patientLogin";
 	}
 
+	
+	
 	@RequestMapping("/edit_patient_profile")
 	public String editProfile(Model model,HttpServletRequest request) {
 

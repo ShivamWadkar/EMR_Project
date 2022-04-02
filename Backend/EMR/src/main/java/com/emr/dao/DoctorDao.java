@@ -70,8 +70,9 @@ public class DoctorDao {
 	public DoctorDto verifyUser(String loginId,String pass) {
 
 		Doctor result = repo.findByLoginId(loginId);
+		System.out.println("After finding doctor");
 		//Patient userP = repo.findByPassword(pass);
-		System.out.println(result);
+		//System.out.println(result);
 		try {
 			if(result != null && passwordEncoder.matches(pass, result.getPassword()))
 			{
@@ -105,6 +106,7 @@ public class DoctorDao {
 
 				DoctorDto newDoctor = new DoctorDto(id,fname,lname,gender,uname,email,base64Image,specialization,experience,education,phoneNo);
 
+				System.out.println("Sending doctor object");
 				return newDoctor;
 			}
 

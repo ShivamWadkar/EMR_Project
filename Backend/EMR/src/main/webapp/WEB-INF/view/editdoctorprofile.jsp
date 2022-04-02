@@ -132,7 +132,7 @@
 												<label>Fist Name</label>
 												<div class="form-line">
 													<input type="text" name="firstName"
-														value="<%=p.getFirstName()%>" class="form-control">
+														value="<%=p.getFirstName()%>" class="form-control" required>
 												</div>
 											</div>
 										</div>
@@ -141,14 +141,14 @@
 												<label>Last Name</label>
 												<div class="form-line">
 													<input type="text" name="lastName"
-														value="<%=p.getLastName()%>" class="form-control">
+														value="<%=p.getLastName()%>" class="form-control" required>
 												</div>
 											</div>
 										</div>
 										<div class="col-lg-12 col-12">
 											<div class="form-group">
 												<label>Gender</label> <select name="gender"
-													class="form-control show-tick">
+													class="form-control show-tick" required>
 													<option value="">- Select -</option>
 													<option value="Male">Male</option>
 													<option value="Female">Female</option>
@@ -174,7 +174,7 @@
 												<div class="form-line">
 													<input type="tel" name="contactNo"
 														value="<%=p.getPhoneNo()%>" maxlength="12"
-														class="form-control">
+														class="form-control" required>
 												</div>
 											</div>
 										</div>
@@ -194,7 +194,7 @@
 												<label>Specialization</label>
 												<div class="form-line">
 													<input type="text" name="specialization"
-														value=" <%= p.getSpecialization() %>" class="form-control" >
+														value=" <%= p.getSpecialization() %>" class="form-control" required >
 												</div>
 											</div>
 										</div>
@@ -204,7 +204,7 @@
 												<label>Experience</label>
 												<div class="form-line">
 													<input type="text" name="experience"
-														value=" <%= p.getExperience() %>" class="form-control">
+														value=" <%= p.getExperience() %>" class="form-control" required>
 												</div>
 											</div>
 										</div>
@@ -217,7 +217,7 @@
 												<div class="form-line">
 													<input type="file" class="form-control" id="customFile"
 														name="file" accept="image/png, image/jpeg"
-														style="opacity: 1; position: relative;">
+														style="opacity: 1; position: relative;" required>
 												</div>
 											</div>
 										</div>

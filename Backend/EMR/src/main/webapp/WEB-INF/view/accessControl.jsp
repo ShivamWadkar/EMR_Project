@@ -1,3 +1,4 @@
+<%@page import="com.emr.dto.AccessDto"%>
 <%@page import="com.emr.pojo.Document"%>
 <%@page import="java.util.List"%>
 <%@page import="com.emr.dto.PatientDto"%>
@@ -17,7 +18,7 @@
 	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-<title>Prescriptions</title>
+<title>Access Control</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -103,8 +104,8 @@
 
 	<div style="text-align: center;">
 		<%
-		List<Document> docs = (List<Document>) request.getAttribute("documents");
-		if (docs == null) {
+		List<AccessDto> access = (List<AccessDto>) request.getAttribute("list");
+		if (access == null) {
 		%>
 		<font color="red">You have not logged In Please Login First !</font>
 		<%
@@ -137,32 +138,27 @@
 												</div>
 
 												<div class="card-body pt-0">
+												
 													<table class="table">
 														<thead>
 															<tr>
 																<th scope="col">SrNo.</th>
-																<th scope="col">Type</th>
-																<th scope="col">Description</th>
-																<th scope="col">Date</th>
-																<th scope="col">Action</th>
+																<th scope="col">Doctor Name</th>
+																<th scope="col">Status</th>
+																
 															</tr>
 														</thead>
 														<tbody>
 															<%
-															for (Document doc : docs) {
-																int id = doc.getId() * 8659;
-																int count = 1;
+															int count = 1;
+															for (AccessDto acc : access) {
+																
 															%>
 															<tr>
-																<td><%=count%></td>
-																<td><%=doc.getDocumentType()%></td>
-																<td><%=doc.getDocumentDescription()%></td>
-																<td><%=doc.getDocumentDate()%></td>
-																<td><a class="btn btn-danger"
-																	href="http://localhost:8080/deleteDocument/<%=id%>"
-																	role="button">Delete</a> <a class="btn btn-secondary"
-																	href="http://localhost:8080/getdocument/<%=id%>"
-																	role="button">Download</a></td>
+																<td><%= acc.getId() %></td>
+																<td><%= acc.getDoctorName() %></td>
+																<td><%= acc.getStatus() %></td>
+																
 															</tr>
 
 															<%
@@ -170,9 +166,15 @@
 															}
 															%>
 
-
+																
 														</tbody>
+														
 													</table>
+													<form action="change_status" method="POST">
+													
+													Enter SrNo to Change Status <input type="text" name="id"/>
+													<button type="submit" class="btn btn-outline-dark">Submit</button>
+													</form>
 												</div>
 
 											</div>

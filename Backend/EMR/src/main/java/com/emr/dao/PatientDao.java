@@ -28,37 +28,46 @@ public class PatientDao {
 
 	public PatientDto getPatient(String loginId) {
 
+		Patient result = repo.findByLoginId(loginId);
 		try {
-			Patient result = repo.findByLoginId(loginId);
-			int id = result.getId();
-			String fname = result.getFirstName();
-			String lname = result.getLastName();
-			String gender = result.getGender();
-			Date dob = result.getDateOfBirth();
-			String phoneNo = result.getPhoneNo();
-			String add = result.getAddress();
-			String bloodGroup = result.getBloodGroup();
-			String uname = result.getLoginId();
-			Blob blob = result.getProfilePhoto();
-			String email = result.getEmailId();
-			InputStream inputStream = blob.getBinaryStream();
-			ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-			byte[] buffer = new byte[4096];
-			int bytesRead = -1;
+			
+			if(result != null) {
+				
+				int id = result.getId();
+				String fname = result.getFirstName();
+				String lname = result.getLastName();
+				String gender = result.getGender();
+				Date dob = result.getDateOfBirth();
+				String phoneNo = result.getPhoneNo();
+				String add = result.getAddress();
+				String bloodGroup = result.getBloodGroup();
+				String uname = result.getLoginId();
+				Blob blob = result.getProfilePhoto();
+				String email = result.getEmailId();
+				InputStream inputStream = blob.getBinaryStream();
+				ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+				byte[] buffer = new byte[4096];
+				int bytesRead = -1;
 
-			while ((bytesRead = inputStream.read(buffer)) != -1) {
-				outputStream.write(buffer, 0, bytesRead);                  
+				while ((bytesRead = inputStream.read(buffer)) != -1) {
+					outputStream.write(buffer, 0, bytesRead);                  
+				}
+
+				byte[] imageBytes = outputStream.toByteArray();
+				String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+
+				inputStream.close();
+				outputStream.close();
+
+				PatientDto newPatient = new PatientDto(id,fname,lname,gender,dob,phoneNo,add,bloodGroup,uname,email,base64Image);
+				return newPatient;
 			}
-
-			byte[] imageBytes = outputStream.toByteArray();
-			String base64Image = Base64.getEncoder().encodeToString(imageBytes);
-
-
-			inputStream.close();
-			outputStream.close();
-
-			PatientDto newPatient = new PatientDto(id,fname,lname,gender,dob,phoneNo,add,bloodGroup,uname,email,base64Image);
-			return newPatient;
+			else {
+				
+				return null;
+			}
+			
 		}catch (SQLException | IOException ex) {
 			ex.printStackTrace();
 			return null;

@@ -97,7 +97,7 @@
 
 
 						<div class="dropdown btn-group">
-							<a class="nav-link" href="/requestPatientAccess">Request Access</a>
+							<a class="nav-link" href="/requestPatientAccess">REQUEST ACCESS</a>
 							
 						</div>
 						<li><a class="nav-link" href="/dSignOut">LOGOUT</a></li>
@@ -237,7 +237,8 @@
 
 
 
-
+			</div>
+		</div>
 
 			<!-- Start Footer -->
 			<footer class="footer-box">
@@ -254,7 +255,7 @@
 				</div>
 			</footer>
 			<!-- End Footer -->
-		</div>
+		
 		<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i
 			class="fa fa-angle-up"></i></a> <a href="#" id="scroll-to-top"
 			class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>

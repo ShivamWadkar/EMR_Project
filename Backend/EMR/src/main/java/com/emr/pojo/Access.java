@@ -65,10 +65,9 @@ public class Access {
 
 	@Override
 	public String toString() {
-		return "Access [id=" + id + ", patient=" + patient + ", doctor=" + doctor + ", accessStatus=" + accessStatus
+		return "Access [id=" + id + ", accessStatus=" + accessStatus
 				+ "]";
 	}
 
-	
 	
 }

@@ -128,7 +128,7 @@ public class Document {
 	@Override
 	public String toString() {
 		return "Document [id=" + id + ", documentType=" + documentType + ", documentDescription=" + documentDescription
-				+ ", document=" + document + ", documentDate=" + documentDate + ", patient=" + patient + "]";
+				+ ", document=" + document + ", documentDate=" + documentDate + "]";
 	}
 
 	
