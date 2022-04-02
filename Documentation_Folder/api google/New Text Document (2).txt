@@ -1,4 +1,0 @@
-Steps after you click on 'Sign in with Google'
-1.You will be redirected to Gmail sign in page
-2.Google will authenticate you with your credentials and send auth code to website.
-3.Website will now send back the auth code to Google and will get access token and store it. This access token is useful to obtain information of user.
