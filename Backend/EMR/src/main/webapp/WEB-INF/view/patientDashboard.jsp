@@ -89,31 +89,36 @@
 				<div class="collapse navbar-collapse justify-content-end"
 					id="navbar-wd">
 					<ul class="navbar-nav">
-						<li><a class="nav-link active" href="index">Home</a></li>
-						<!---<li><a class="nav-link" href="profile">Profile</a></li>--->
-
+						<li><a class="nav-link" href="index">Home</a></li>
+						<li><a class="nav-link" href="/edit_patient_profile">Edit
+								profile</a></li>
 						<div class="dropdown btn-group">
 							<a class="nav-link" data-toggle="dropdown" href="#">
 								PRESCRIPTIONS <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="upload_documents">New Prescription</a></li>
-								<li><a href="#">Prescriptions</a></li>
+								<li><a class="nav-link" href="upload_documents">New
+										Prescription</a></li>
+								
 							</ul>
 						</div>
 
 
 						<div class="dropdown btn-group">
-							<a class="nav-link" data-toggle="dropdown" href="#"> TEST
+							<a class="nav-link " data-toggle="dropdown" href="#"> TEST
 								REPORTS <span class="caret"></span>
 							</a>
 							<ul class="dropdown-menu">
-								<li><a href="upload_documents">New Test</a></li>
-								<li><a href="/doctor_signup">Tests</a></li>
+								<li><a class="nav-link" href="upload_documents">New
+										Test</a></li>
+								
 							</ul>
 						</div>
-						
-						<li><a class="nav-link active" href="signOut">LogOut</a></li>
+						<div class="dropdown btn-group">
+							<a class="nav-link" href="getalldocuments">View Documents</a>
+							
+						</div>
+						<li><a class="nav-link" href="signOut">LOGOUT</a></li>
 					</ul>
 				</div>
 			</div>
@@ -123,16 +128,17 @@
 <body>
 	<div style="text-align: center;">
 		<%
-			PatientDto p = (PatientDto) request.getAttribute("patient");
-			if (p == null) {
+		PatientDto p = (PatientDto) request.getAttribute("patient");
+		if (p == null) {
 		%>
-			<font color="red" >You have not logged In Please Login First !</font>
-		<%} 
-		
-			else{
-				session.setAttribute("uname",p.getLoginId());
-				//session.setAttribute("id",p.getId());
-			}
+		<font color="red">You have not logged In Please Login First !</font>
+		<%
+		}
+
+		else {
+		session.setAttribute("uname", p.getLoginId());
+		//session.setAttribute("id",p.getId());
+		}
 		%>
 	</div>
 
@@ -140,28 +146,24 @@
 
 	<div class="container-login100">
 
-		<header class="ScriptHeader">
-			<div class="rt-container">
-				<div class="col-rt-12">
-					<div class="rt-heading">
-						<h1
-							style="color: rgb(3, 54, 54); font-size: 40px; font-style: italic;">My
-							Profile</h1>
+		<h3>
+			Welcome
+			<%=p.getFirstName()%>
+			<%=p.getLastName()%>
+		</h3>
+
+		<div class="container-fluid">
+			<div style="margin: auto; padding: 10px;" class="col-lg-3">
+				<div class="card shadow-sm">
+					<div class="card-header bg-transparent text-center">
+
+						<img src="data:image/jpg;base64,<%=p.getBase64Image()%>"
+							width="240" height="300" />
+
 					</div>
 				</div>
 			</div>
-		</header>
 
-		<div class="container-fluid">
-			<div class="row clearfix">
-				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12"></div>
-				<div
-					class="col-lg-6 col-md-6 col-sm-6 col-xs-12 m-t-10 align-right text-right">
-					<a href="/edit_patient_profile"
-						class="btn btn-info waves-effect col-white">Edit</a>
-					<!---  <button type="button" class="btn btn-primary waves-effect col-white" data-toggle="modal" data-target="#ModalChangePassword">Change Password</button>--->
-				</div>
-			</div>
 
 			<section>
 				<div class="rt-container">
@@ -172,20 +174,8 @@
 							<div class="student-profile py-4">
 								<div class="container">
 									<div class="row">
-										<div class="col-lg-4">
-											<div class="card shadow-sm">
-												<div class="card-header bg-transparent text-center">
-												
-												<img src="data:image/jpg;base64,<%=p.getBase64Image() %>" width="240" height="300"/>
-	
-													<h3>
-														Welcome
-														<%=p.getFirstName()%>
-														<%= p.getLastName()%></h3>
-												</div>
-											</div>
-										</div>
-										<div class="col-lg-8">
+
+										<div class="col-lg-12">
 											<div class="card shadow-sm">
 												<div class="card-header bg-transparent border-0">
 													<h3 class="mb-0">
@@ -197,7 +187,7 @@
 														<tr>
 															<th width="30%">Name</th>
 															<td width="2%">:</td>
-															<td><%=p.getFirstName()%> <%= p.getLastName()%></td>
+															<td><%=p.getFirstName()%> <%=p.getLastName()%></td>
 														</tr>
 														<tr>
 															<th width="30%">Gender</th>

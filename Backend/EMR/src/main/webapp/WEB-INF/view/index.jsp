@@ -36,13 +36,14 @@
 </head>
 <body id="home" data-spy="scroll" data-target="#navbar-wd"
 	data-offset="98">
-
+	<%--String loginId = (String)session.getAttribute("uname"); --%>
 	<div class="main-top">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="left-top">
-						<a class="new-btn-d br-2" href="#"><span>E-HealthBook</span></a>
+						<a class="new-btn-d br-2" href="#"><span>Electronic
+								Medical Record</span></a>
 					</div>
 				</div>
 				<div class="col-lg-6">
@@ -58,7 +59,7 @@
 	<header class="top-header">
 		<nav class="navbar header-nav navbar-expand-lg">
 			<div class="container">
-				<a class="navbar-brand" href="index.html"><img
+				<a class="navbar-brand" href="/index"><img
 					src="images/logo6.png" height="60px" alt="image"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbar-wd" aria-controls="navbar-wd"
@@ -71,12 +72,13 @@
 						<li><a class="nav-link active" href="#home">Home</a></li>
 						<li><a class="nav-link" href="#about">About Us</a></li>
 						<li><a class="nav-link" href="#gallery">Gallery</a></li>
-							<li><a class="nav-link" href="#contactus">Contact Us</a></li>
+						
+						
 						<div class="dropdown btn-group">
                              <a class="nav-link" data-toggle="dropdown" href="#"> LOGIN <span class="caret"></span> </a>
                              <ul class="dropdown-menu">
                                 <li><a href="/patient_login">PATIENT</a></li>
-                                <li><a href="http://localhost:3000/login">DOCTOR</a></li>
+                                <li><a href="/doctor_login">DOCTOR</a></li>
                              </ul>
                          </div>
                          
@@ -88,6 +90,9 @@
                                 <li><a href="/doctor_signup">DOCTOR</a></li>
                              </ul>
                          </div>
+                         
+						
+						
 					</ul>
 				</div>
 			</div>
@@ -128,7 +133,9 @@
 						<div class="lbox-caption pogoSlider-slide-element">
 							<div class="lbox-details">
 								<h1>Welcome to Health Information Record System</h1>
-								
+								<p>Fusce convallis ante id purus sagittis malesuada. Sed
+									erat ipsum</p>
+
 							</div>
 						</div>
 
@@ -159,9 +166,9 @@
 								<h1>Welcome to E-Health Book</h1>
 								<p>Electronic Medical Record is a web-based application
 									which is used to capture, organize, maintain and retrieve
-									patients medical records on day-to-day basis.</p>
+									patient’s medical records on day-to-day basis.</p>
 								<p>This Application consist of a Comprehensive database used
-									to store and access patients healthcare information. The major
+									to store and access patients’ healthcare information. The major
 									goal of the EMR is to serve as a repository of the clinicals
 									observations and analysis of the patient. It contains modules
 									like Authentication, Document management, Event management,
@@ -170,13 +177,12 @@
 							</div>
 							<div class="col-lg-6 col-md-6 col-sm-12">
 								<div class="about-m">
-								<img src="images/aboutusimg.jpg" alt="">
-									<!---<ul id="banner">
+									<ul id="banner">
 										<li><img src="images/emr.jpg" alt="" width="50px"
 											height="500px"></li>
-										<li></li>
+										<li><img src="images/about-img-02.jpg" alt=""></li>
 										<li><img src="images/about-img-03.jpg" alt=""></li>
-									</ul>----->
+									</ul>
 								</div>
 							</div>
 						</div>
@@ -195,7 +201,7 @@
 				<div class="col-lg-12">
 					<div class="title-box">
 						<h2>Gallery</h2>
-						<p>Electronic Medical Record</p>
+						<p>Electrnic Medical Record</p>
 					</div>
 				</div>
 			</div>
@@ -204,24 +210,24 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src=" https://www.istockphoto.com/photo/doctor-is-showing-the-medical-report-to-her-patient-gm1036234460-277379355"
+							src="https://tse1.mm.bing.net/th?id=OIP.-4klJtL_8XlZE5ICmt_YWwHaE8&pid=Api&P=0&w=264&h=176"
 							alt="">
 						<div class="box-content">
-							
-						<!---	<ul class="icon">
+							<h3 class="title">Lorem ipsum dolor</h3>
+							<ul class="icon">
 								<li><a href="images/gallery-01.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
-							</ul>---->
+							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/electronic-medical-record-concept-gm904427708-249419297"
+							src="https://tse2.mm.bing.net/th?id=OIP._VLZDwfPS-bNegstq_08wQHaD3&pid=Api&P=0&w=360&h=188"
 							alt="">
 						<div class="box-content">
-							
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-02.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -232,7 +238,7 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/background-image-for-medical-and-health-work-showing-images-of-electronic-medical-gm1310391398-399810310"
+							src="https://media.istockphoto.com/photos/electronic-medical-record-concept-picture-id904427688"
 							alt="">
 						<div class="box-content">
 							<ul class="icon">
@@ -245,10 +251,10 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/consultant-showing-patient-test-results-on-digital-tablet-gm502561107-44010612"
+							src="https://tse4.mm.bing.net/th?id=OIP.jWd2a5cehDvnQAM1wFBc0gHaDt&pid=Api&P=0&w=355&h=177"
 							alt="">
 						<div class="box-content">
-							
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-04.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -259,10 +265,10 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/changing-of-medical-record-working-by-hand-to-electronic-medical-record-gm1045143564-279700229"
+							src="https://tse3.mm.bing.net/th?id=OIP.XDHdpPGzQVBaHy-q_UlDjgHaFj&pid=Api&P=0&w=230&h=172"
 							alt="">
 						<div class="box-content">
-							
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-05.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -273,10 +279,10 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/hospital-doctors-using-digital-patient-chart-gm524326035-52314504"
+							src="https://pmrpressrelease.com/wp-content/uploads/2019/07/Electronic-Medical-Records-Systems1.jpg"
 							alt="">
 						<div class="box-content">
-						
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-06.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -287,10 +293,10 @@
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
 						<img
-							src="https://www.istockphoto.com/photo/have-a-look-at-your-bloodwork-results-gm1293814791-388076671"
+							src="https://tse2.mm.bing.net/th?id=OIP.zmRWSzVYdYXCdPbMCadZiQHaFC&pid=Api&P=0&w=258&h=176"
 							alt="">
 						<div class="box-content">
-							
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-07.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -300,9 +306,9 @@
 				</div>
 				<div class="col-md-3 col-sm-6">
 					<div class="box-gallery">
-						<img src="https://www.istockphoto.com/photo/female-doctor-sitting-in-office-with-electronic-medical-record-screen-on-background-gm1146139334-308740133" alt="">
+						<img src="images/gallery-08.jpg" alt="">
 						<div class="box-content">
-						
+							<h3 class="title">Lorem ipsum dolor</h3>
 							<ul class="icon">
 								<li><a href="images/gallery-08.jpg"><i
 										class="fa fa-picture-o" aria-hidden="true"></i></a></li>
@@ -315,44 +321,6 @@
 	</div>
 	<!-- End Gallery -->
 
-	<!-- Start Contact Us -->
-	<div id="contactus" class="contactus-box">
-	  <div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-12">
-					<div class="title-box">
-						<h2>Contact Us</h2>
-	                <div class="subscribe-box">
-		              <div class="container">
-			              <div class="row">
-				             <div class="col-lg-12">
-			  
-					     <div class="subscribe-inner text-center clearfix">
-						
-
-						<form action="#" method="post">
-							<div class="form-group">
-								<input class="form-control-1" id="name-1" name="name" placeholder="Name" required="" type="text">
-								<br><br>
-								<input class="form-control-1" id="message-1" name="message" placeholder="Message " required="" type="text">
-							</div>
-							<div class="form-group">
-								<button type="submit" class="new-btn-d br-2">
-									Send Message
-								</button>
-							</div>
-						</form>
-					   </div>
-				    </div>
-			      </div>
-		         </div>
-	           </div>
-			</div>
-		  </div>
-		</div>
-	</div>
-	</div>
-	<!-- End contact us -->
 
 
 	<!-- Start Footer -->

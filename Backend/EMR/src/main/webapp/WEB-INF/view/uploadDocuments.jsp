@@ -4,39 +4,49 @@
 <html lang="en">
 <head>
 <!-- Required meta tags-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Colorlib Templates">
-    <meta name="author" content="Colorlib">
-    <meta name="keywords" content="Colorlib Templates">
+<meta charset="UTF-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Colorlib Templates">
+<meta name="author" content="Colorlib">
+<meta name="keywords" content="Colorlib Templates">
 
-    <!-- Title Page-->
-    <title>Upload Documents</title>
+<!-- Title Page-->
+<title>Upload Documents</title>
 
-    <!-- Icons font CSS-->
-    <link href="Forms/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
-    <link href="Forms/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <!-- Font special for pages-->
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<!-- Icons font CSS-->
+<link
+	href="Forms/vendor/mdi-font/css/material-design-iconic-font.min.css"
+	rel="stylesheet" media="all">
+<link href="Forms/vendor/font-awesome-4.7/css/font-awesome.min.css"
+	rel="stylesheet" media="all">
+<!-- Font special for pages-->
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet">
 
-    <!-- Vendor CSS-->
-    <link href="Forms/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="Forms/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+<!-- Vendor CSS-->
+<link href="Forms/vendor/select2/select2.min.css" rel="stylesheet"
+	media="all">
+<link href="Forms/vendor/datepicker/daterangepicker.css"
+	rel="stylesheet" media="all">
 
-    <!-- Main CSS-->
-    <link href="Forms/css/main.css" rel="stylesheet" media="all">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Pogo Slider CSS -->
-    <link rel="stylesheet" href="css/pogo-slider.min.css">
-	<!-- Site CSS -->
-    <link rel="stylesheet" href="css/style.css">    
-    <!-- Responsive CSS -->
-    <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" type="text/css" href="Forms/Login_form/css/main.css">
-    <link rel="stylesheet" type="text/css" href="Forms/Login_form/css/util.css">
+<!-- Main CSS-->
+<link href="Forms/css/main.css" rel="stylesheet" media="all">
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Pogo Slider CSS -->
+<link rel="stylesheet" href="css/pogo-slider.min.css">
+<!-- Site CSS -->
+<link rel="stylesheet" href="css/style.css">
+<!-- Responsive CSS -->
+<link rel="stylesheet" href="css/responsive.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/custom.css">
+<link rel="stylesheet" type="text/css"
+	href="Forms/Login_form/css/main.css">
+<link rel="stylesheet" type="text/css"
+	href="Forms/Login_form/css/util.css">
 
 
 
@@ -85,68 +95,75 @@
 	</header>
 	<!-- End header -->
 
-	
+
 
 	<div class="container-login100">
-        <div class="wrapper wrapper--w680">
-            <div class="card card-5">
-                <div class="card-body">
-                    <h2>New Document</h2>
-                	<small class="text-muted">Add new document.</small>
-                    <form action="add_document" method="POST" enctype="multipart/form-data">
-                        <div class="row row-space">
-                            <div class="col-lg-12 col-sm-12">
-                                        <div class="form-group">
-                                            <label>Document Type *</label>
-                                           <select name="documentType">
-                                           	  <option value="select" >-- Select --</option>
-											  <option value="prescription" >Prescription</option>
-											  <option value="test" >Test Report</option>
-											</select>
-                                        </div>
-                                    </div>
-                        </div>
-                        <div class="row row-space">
-                        	<div class="col-6">
-                                        <div class="form-group" style="position:relative;">
-                                            <label>Scanned Documents</label>
-                                            <div class="form-line">
-                                               <input type="file" name="file" class="form-control" accept="image/gif, image/png, image/jpg, image/jpeg" style="opacity:1; position:relative;" multiple>
-                                            </div>
-                                            <button type="button" id="Clear" class="btn btn-xs btn-link" style="display:none; position:absolute; top:-10px; right:0px;" onclick="$('input[name=\'imgs[]\']').val(''); $(this).hide()">Clear Files</button>
-                                        </div>
-                                    </div>
-                            <div class="col-6">
-                                <div class="input-group">
-                                    <label class="label">Date</label>
-                                    <div class="input-group-icon">
-                                    <br>
-                                        <input class="input--style-4 js-datepicker" type="date" name="documentDate">
-                                        <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        <div class="col-sm-12">
-                                        <div class="form-group">
-                                            <label>Description</label>
-                                            <div class="form-line">
-                                                <textarea rows="3" cols="2" name="description" class="form-control no-resize auto-growth"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                        
-                        
-                        <div class="p-t-15" style="text-align: center;">
-                            <button type="submit" class="btn btn--radius-2 btn--blue">Add</button>
-                        </div>
-                        
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+		<div class="wrapper wrapper--w680">
+			<div class="card card-5">
+				<div class="card-body">
+					<h2>New Document</h2>
+					<small class="text-muted">Add new document.</small>
+					<form action="add_document" method="POST"
+						enctype="multipart/form-data">
+						<div class="row row-space">
+							<div class="col-lg-12 col-sm-12">
+								<div class="form-group">
+									<label>Document Type *</label> <select name="documentType">
+										<option value="select">-- Select --</option>
+										<option value="Prescription">Prescription</option>
+										<option value="Test Report">Test Report</option>
+									</select>
+								</div>
+							</div>
+						</div>
+						<div class="row row-space">
+							<div class="col-6">
+								<div class="form-group" style="position: relative;">
+									<label>Scanned Documents</label>
+									<div class="form-line">
+										<input type="file" name="file" class="form-control"
+											accept="image/gif, image/png, image/jpg, image/jpeg"
+											style="opacity: 1; position: relative;" multiple>
+									</div>
+									<button type="button" id="Clear" class="btn btn-xs btn-link"
+										style="display: none; position: absolute; top: -10px; right: 0px;"
+										onclick="$('input[name=\'imgs[]\']').val(''); $(this).hide()">Clear
+										Files</button>
+								</div>
+							</div>
+							
+							<div class="col-6">
+								<div class="input-group">
+									<label class="label">Date</label>
+									<div class="input-group-icon">
+										<br> <input class="input--style-4 js-datepicker"
+											type="date" name="documentDate"> <i
+											class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label>Description</label>
+								<div class="form-line">
+									<textarea rows="3" cols="2" name="description"
+										class="form-control no-resize auto-growth"></textarea>
+								</div>
+							</div>
+						</div>
+
+
+						<div class="p-t-15" style="text-align: center;">
+							<button type="submit" class="btn btn--radius-2 btn--blue">Add</button>
+						</div>
+
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
@@ -191,5 +208,6 @@
 	<script src="js/isotope.min.js"></script>
 	<script src="js/images-loded.min.js"></script>
 	<script src="js/custom.js"></script>
+	
 </body>
 </html>

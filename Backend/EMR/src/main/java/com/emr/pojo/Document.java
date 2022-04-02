@@ -3,7 +3,6 @@ package com.emr.pojo;
 import java.sql.Blob;
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "document_tbl")
@@ -35,9 +35,20 @@ public class Document {
 	@Column(name = "document_date")
 	private Date documentDate;
 	
-	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+	@Column(name = "document_name")
+	private String documentname;
+	
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "patient_id",referencedColumnName = "patient_id")
 	private Patient patient;
+
+	public String getDocumentname() {
+		return documentname;
+	}
+
+	public void setDocumentname(String documentname) {
+		this.documentname = documentname;
+	}
 
 	public int getId() {
 		return id;

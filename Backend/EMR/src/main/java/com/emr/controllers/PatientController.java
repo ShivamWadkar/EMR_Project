@@ -35,15 +35,35 @@ public class PatientController {
 	}
 
 	@RequestMapping("/patient_dashboard")
-	public String showDashboard() {
+	public String showDashboard(Model model,HttpServletRequest request) {
 
-		return "patientDashboard";
+		if(request.getSession().getAttribute("uname") != null) {
+			String patientId = (String)request.getSession().getAttribute("uname");
+			PatientDto patient = dao.getPatient(patientId);
+			model.addAttribute("patient", patient);
+			return "patientDashboard";
+		}
+		else
+
+			model.addAttribute("errormsg", "Wrong username or password please try again !!");
+			return "patientLogin";
 	}
 
 	@RequestMapping("/edit_patient_profile")
-	public String editProfile() {
+	public String editProfile(Model model,HttpServletRequest request) {
 
-		return "editpatientprofile";
+		if(request.getSession().getAttribute("uname") != null) {
+
+			String patientId = (String)request.getSession().getAttribute("uname");
+			PatientDto patient = dao.getPatient(patientId);
+			model.addAttribute("patient", patient);
+			return "editpatientprofile";
+
+		}
+		else {
+			model.addAttribute("errormsg", "Wrong username or password please try again !!");
+			return "patientLogin";
+		}
 	}
 
 	@RequestMapping("/upload_documents")
@@ -110,14 +130,55 @@ public class PatientController {
 
 	}
 
+	@PostMapping("/update_patient_profile")
+	public String updatePatient(Model model,HttpServletRequest request,@RequestParam String firstName,@RequestParam String lastName,@RequestParam String dob,@RequestParam String gender,@RequestParam String contactNo,
+			@RequestParam String address,@RequestParam String bloodGroup,@RequestParam("file") MultipartFile file){
+
+		if(request.getSession().getAttribute("uname") != null) {
+			String uname = (String)request.getSession().getAttribute("uname");
+			byte[] byteArr;
+			Blob blob;
+			try {
+				byteArr = file.getBytes();
+				blob = new SerialBlob(byteArr);
+				dao.update( firstName,  lastName,  dob,  gender,  contactNo,
+						address,  bloodGroup,  blob,uname);
+
+				String patientId = (String)request.getSession().getAttribute("uname");
+				PatientDto patient = dao.getPatient(patientId);
+
+				if(patient != null) {
+					model.addAttribute("patient", patient);
+				}
+				return "editpatientprofile";
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+				return "editpatientprofile";
+			}
+			catch (IOException e1) {
+
+				e1.printStackTrace();
+				return "editpatientprofile";
+			}
+
+
+
+		}
+		return "editpatientprofile";
+
+
+
+	}
+
 	@RequestMapping(value="/signOut",method = RequestMethod.GET) 
 	public String signOut(Model model,HttpServletRequest request){
 		HttpSession session=request.getSession(); 
-		
+
 		session.removeAttribute("uname");   
 		session.invalidate(); 
 		System.out.println("session id after invalidating session is:"+session.getId()); 
-		
+
 		return "index";
 	}
 

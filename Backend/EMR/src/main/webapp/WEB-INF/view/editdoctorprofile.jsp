@@ -1,3 +1,4 @@
+<%@page import="com.emr.dto.DoctorDto"%>
 <%@page import="com.emr.dto.PatientDto"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
@@ -45,7 +46,7 @@
 	data-offset="98">
 	<div style="text-align: center;">
 		<%
-		PatientDto p = (PatientDto) request.getAttribute("patient");
+		DoctorDto p = (DoctorDto) request.getAttribute("doctor");
 
 		if (p == null) {
 		%>
@@ -86,7 +87,7 @@
 					id="navbar-wd">
 					<ul class="navbar-nav">
 						<li><a class="nav-link active" href="index">Home</a></li>
-						<li><a class="nav-link" href="/patient_dashboard">Dashboard</a></li>
+						<li><a class="nav-link" href="/doctor_dashboard">Dashboard</a></li>
 					</ul>
 				</div>
 			</div>
@@ -107,7 +108,7 @@
 				<div class="col-lg-12 col-md-12 col-sm-12">
 					<div class="card">
 						<div class="body">
-							<form action="update_patient_profile" method="POST"
+							<form action="update_doctor_profile" method="POST"
 								enctype="multipart/form-data">
 
 								<div class="row clearfix">
@@ -155,23 +156,7 @@
 											</div>
 										</div>
 
-										<div class="col-lg-12 col-12">
-											<div class="form-group">
-												<label>Blood Group</label> <select name="bloodGroup"
-													class="form-control show-tick">
-													<option value="">-- Select Blood Group --</option>
-													<option value="A-">A-</option>
-													<option value="A+">A+</option>
-													<option value="B-">B-</option>
-													<option value="B+">B+</option>
-													<option value="AB-">AB-</option>
-													<option value="AB+">AB+</option>
-													<option value="O-">O-</option>
-													<option value="O+">O+</option>
-													<option value="Others">Others</option>
-												</select>
-											</div>
-										</div>
+										
 
 										<div class="col-lg-12 col-12">
 											<div class="form-group">
@@ -196,24 +181,35 @@
 
 										<div class="col-lg-12 col-12">
 											<div class="form-group">
-												<label>Date of Birth (YYYY-MM-DD)</label>
+												<label>Education</label>
 												<div class="form-line">
-													<input type="date" name="dob"
-														value="<%=p.getDateOfBirth()%>"
-														class="form-control datepicker">
+													<input type="text" name="education"
+														value=" <%= p.getEducation() %>" class="form-control">
 												</div>
 											</div>
 										</div>
-
+										
 										<div class="col-lg-12 col-12">
 											<div class="form-group">
-												<label>Address</label>
+												<label>Specialization</label>
 												<div class="form-line">
-													<input type="text" name="address"
-														value="<%= p.getAddress() %>" class="form-control">
+													<input type="text" name="specialization"
+														value=" <%= p.getSpecialization() %>" class="form-control" >
 												</div>
 											</div>
 										</div>
+										
+										<div class="col-lg-12 col-12">
+											<div class="form-group">
+												<label>Experience</label>
+												<div class="form-line">
+													<input type="text" name="experience"
+														value=" <%= p.getExperience() %>" class="form-control">
+												</div>
+											</div>
+										</div>
+										
+										
 
 										<div class="col-lg-12 col-12">
 											<div class="form-group">

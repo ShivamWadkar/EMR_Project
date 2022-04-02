@@ -23,11 +23,11 @@ public class AccessDao {
 		
 	}
 	
-	public List<Access> getAccessByDoctorId(int id)
-	{
-		return repo.getAccessByDoctorId(id);
-		
-	}
+//	public void getAccessByDoctorId(int id)
+//	{
+//		return repo.getAccessByDoctorId(id);
+//		
+//	}
 	
 
 }

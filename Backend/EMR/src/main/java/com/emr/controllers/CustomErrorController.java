@@ -14,7 +14,7 @@ public class CustomErrorController implements ErrorController {
   @RequestMapping("/error")
   @ResponseBody
   String error(HttpServletRequest request) {
-    return "<h1>Error occurred</h1>";
+    return "<font color=\"red\" >Something went wrong try again</font>";
   }
 
   public String getErrorPath() {

@@ -29,7 +29,7 @@ public class Access {
 	private Doctor doctor;
 	
 	@Column(name = "access_status")
-	private int accessStatus;
+	private int accessStatus = 0;
 
 	public int getId() {
 		return id;

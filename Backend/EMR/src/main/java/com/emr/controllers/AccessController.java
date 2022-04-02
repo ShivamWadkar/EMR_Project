@@ -32,11 +32,7 @@ public class AccessController {
 	@GetMapping("/getAccessByDoctorId/{id}")
 	public void getAccessByDoctorId(@PathVariable("id") int id)
 	{
-		List<Access> list = dao.getAccessByDoctorId(id);
 		
-		list.forEach(e->{
-			System.out.println(e);
-		});
 	}
 	
 	
