@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.emr.dao.DoctorDao;
 import com.emr.dto.DoctorDto;
@@ -37,6 +38,22 @@ public class DoctorController {
 	public String pSignUp() {
 
 		return "doctorSignup";
+	}
+	
+
+	@RequestMapping("/requestPatientAccess")
+	public ModelAndView showIndex() {
+
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("result", "Welcome Doctor");
+		mv.setViewName("requestAccess");
+		return mv;
+	}
+	
+	@RequestMapping("/viewPatient")
+	public String viewPatient() {
+
+		return "viewPatient";
 	}
 	
 	@RequestMapping("/doctor_dashboard")

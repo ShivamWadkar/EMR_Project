@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.emr.pojo.Access;
+import com.emr.pojo.Doctor;
+import com.emr.pojo.Patient;
 import com.emr.repositories.MyAccessRepository;
 
 
@@ -13,13 +15,36 @@ import com.emr.repositories.MyAccessRepository;
 public class AccessDao {
 	
 	@Autowired
-	MyAccessRepository repo;
+	private MyAccessRepository repo;
 	
-	public List<Access> getAllAccessInfo()
+	public List<Access> getAllAccessInfo(String id)
 	{
 		return repo.findAll();
 		
 		
+		
+	}
+	
+	public String saveRequest(Patient patient,Doctor doctor) {
+		
+		int patientId = patient.getId();
+		int doctorId = doctor.getId();
+		Access checkAccess = repo.getAccessById(patientId, doctorId);
+		
+		if(checkAccess == null) {
+			
+			Access acc = new Access();
+			acc.setDoctor(doctor);
+			acc.setPatient(patient);
+			
+			repo.save(acc);
+			
+			return "Request Sent";
+		}
+		else {
+			
+			return "Already Requested";
+		}
 		
 	}
 	

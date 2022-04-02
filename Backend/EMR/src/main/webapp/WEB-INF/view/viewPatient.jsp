@@ -1,4 +1,5 @@
-<%@page import="com.emr.dto.DoctorDto"%>
+<%@page import="com.emr.pojo.Document"%>
+<%@page import="java.util.List"%>
 <%@page import="com.emr.dto.PatientDto"%>
 <%@page import="java.io.OutputStream"%>
 <%@page import="java.sql.Blob"%>
@@ -16,7 +17,7 @@
 	content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 
-<title>Doctor's Dashboard</title>
+<title>Prescriptions</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -91,16 +92,8 @@
 					id="navbar-wd">
 					<ul class="navbar-nav">
 						<li><a class="nav-link" href="index">Home</a></li>
-						<li><a class="nav-link" href="/edit_doctor_profile">Edit
-								profile</a></li>
-						
-
-
-						<div class="dropdown btn-group">
-							<a class="nav-link" href="/requestPatientAccess">Request Access</a>
-							
-						</div>
-						<li><a class="nav-link" href="/dSignOut">LOGOUT</a></li>
+						<li><a class="nav-link" href="doctor_dashboard">Dashboard</a></li>
+						<li><a class="nav-link" href="signOut">LOGOUT</a></li>
 					</ul>
 				</div>
 			</div>
@@ -110,16 +103,11 @@
 <body>
 	<div style="text-align: center;">
 		<%
-		DoctorDto p = (DoctorDto) request.getAttribute("doctor");
-		if (p == null) {
+		List<Document> docs = (List<Document>) request.getAttribute("documents");
+		if (docs == null) {
 		%>
 		<font color="red">You have not logged In Please Login First !</font>
 		<%
-		}
-
-		else {
-		session.setAttribute("uname", p.getLoginId());
-		//session.setAttribute("id",p.getId());
 		}
 		%>
 	</div>
@@ -128,24 +116,7 @@
 
 	<div class="container-login100">
 
-		<h3>
-			Welcome
-			<%=p.getFirstName()%>
-			<%=p.getLastName()%>
-		</h3>
-
 		<div class="container-fluid">
-			<div style="margin: auto; padding: 10px;" class="col-lg-3">
-				<div class="card shadow-sm">
-					<div class="card-header bg-transparent text-center">
-
-						<img src="data:image/jpg;base64,<%=p.getBase64Image()%>"
-							width="240" height="300" />
-
-					</div>
-				</div>
-			</div>
-
 
 			<section>
 				<div class="rt-container">
@@ -156,54 +127,52 @@
 							<div class="student-profile py-4">
 								<div class="container">
 									<div class="row">
-
+										
 										<div class="col-lg-12">
 											<div class="card shadow-sm">
 												<div class="card-header bg-transparent border-0">
 													<h3 class="mb-0">
-														<i class="far fa-clone pr-1"></i>General Information
+														<i class="far fa-clone pr-1"></i> Documents
 													</h3>
 												</div>
+
 												<div class="card-body pt-0">
-													<table class="table table-bordered">
-														<tr>
-															<th width="30%">Name</th>
-															<td width="2%">:</td>
-															<td><%=p.getFirstName()%> <%=p.getLastName()%></td>
-														</tr>
-														<tr>
-															<th width="30%">Gender</th>
-															<td width="2%">:</td>
-															<td><%=p.getGender()%></td>
-														</tr>
-														<tr>
-															<th width="30%">Email ID</th>
-															<td width="2%">:</td>
-															<td><%=p.getEmailId()%></td>
-														</tr>
-														<tr>
-															<th width="30%">Mobile NO</th>
-															<td width="2%">:</td>
-															<td><%= p.getPhoneNo() %></td>
-														</tr>
-														
-														<tr>
-															<th width="30%">Education</th>
-															<td width="2%">:</td>
-															<td><%= p.getEducation() %></td>
-														</tr>
-														<tr>
-															<th width="30%">Specialization</th>
-															<td width="2%">:</td>
-															<td><%= p.getSpecialization() %></td>
-														</tr>
-														<tr>
-															<th width="30%">Experience</th>
-															<td width="2%">:</td>
-															<td><%= p.getExperience() %></td>
-														</tr>
+													<table class="table">
+														<thead>
+															<tr>
+																<th scope="col">SrNo.</th>
+																<th scope="col">Patient Name</th>
+																<th scope="col">Status</th>
+																<th scope="col">View</th>
+															</tr>
+														</thead>
+														<tbody>
+															<%
+															for (Document doc : docs) {
+																int id = doc.getId() * 8659;
+																int count = 1;
+															%>
+															<tr>
+																<td><%=count%></td>
+																<td><%=doc.getDocumentType()%></td>
+																<td><%=doc.getDocumentDescription()%></td>
+																<td><a class="btn btn-danger"
+																	href="http://localhost:8080/deleteDocument/<%=id%>"
+																	role="button">Delete</a> <a class="btn btn-secondary"
+																	href="http://localhost:8080/getdocument/<%=id%>"
+																	role="button">Download</a></td>
+															</tr>
+
+															<%
+															count++;
+															}
+															%>
+
+
+														</tbody>
 													</table>
 												</div>
+
 											</div>
 											<div style="height: 26px"></div>
 

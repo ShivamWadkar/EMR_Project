@@ -100,7 +100,7 @@
 		</nav>
 	</header>
 	<!-- End header -->
-<body>
+
 	<div style="text-align: center;">
 		<%
 		List<Document> docs = (List<Document>) request.getAttribute("documents");
@@ -109,7 +109,6 @@
 		<font color="red">You have not logged In Please Login First !</font>
 		<%
 		}
-		
 		%>
 	</div>
 
@@ -136,7 +135,7 @@
 														<i class="far fa-clone pr-1"></i> Documents
 													</h3>
 												</div>
-												
+
 												<div class="card-body pt-0">
 													<table class="table">
 														<thead>
@@ -155,15 +154,19 @@
 																int count = 1;
 															%>
 															<tr>
-																<td><%= count %></td>
-																<td><%= doc.getDocumentType() %></td>
-																<td><%= doc.getDocumentDescription() %></td>
-																<td><%= doc.getDocumentDate() %></td>
-																<td><a class="btn btn-danger" href="http://localhost:8080/deleteDocument/<%=id %>" role="button">Delete</a>   <a class="btn btn-secondary" href="http://localhost:8080/getdocument/<%=id %>" role="button">Download</a></td>
+																<td><%=count%></td>
+																<td><%=doc.getDocumentType()%></td>
+																<td><%=doc.getDocumentDescription()%></td>
+																<td><%=doc.getDocumentDate()%></td>
+																<td><a class="btn btn-danger"
+																	href="http://localhost:8080/deleteDocument/<%=id%>"
+																	role="button">Delete</a> <a class="btn btn-secondary"
+																	href="http://localhost:8080/getdocument/<%=id%>"
+																	role="button">Download</a></td>
 															</tr>
 
 															<%
-																count++;
+															count++;
 															}
 															%>
 
@@ -171,7 +174,7 @@
 														</tbody>
 													</table>
 												</div>
-												
+
 											</div>
 											<div style="height: 26px"></div>
 
@@ -187,27 +190,7 @@
 			</section>
 
 
-
-
-
-
-
-
-			<!-- Analytics -->
-
-
-			<!-- end profile -->
-
-
-
-
-
-
-
-
-
-
-			<!-- Start Footer -->
+		<!-- Start Footer -->
 			<footer class="footer-box">
 				<div class="container">
 					<div class="row">
@@ -222,11 +205,11 @@
 				</div>
 			</footer>
 			<!-- End Footer -->
-		</div>
-		<a href="#" id="scroll-to-top" class="new-btn-d br-2"><i
-			class="fa fa-angle-up"></i></a> <a href="#" id="scroll-to-top"
-			class="new-btn-d br-2"><i class="fa fa-angle-up"></i></a>
 
+			
+		</div>
+	
+		
 		<!-- ALL JS FILES -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/popper.min.js"></script>

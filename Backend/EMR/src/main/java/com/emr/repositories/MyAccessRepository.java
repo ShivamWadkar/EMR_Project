@@ -16,5 +16,8 @@ public interface MyAccessRepository extends JpaRepository<Access,Integer>{
 	
 	  @Query(value="select * from access_tbl where patient_id=:id",nativeQuery = true)
 	  public List<Access> getAccessByDoctorId(@Param("id") int id);
+	  
+	  @Query(value="select * from access_tbl where patient_id=:patientId and doctor_id=:doctorId",nativeQuery = true)
+	  public Access getAccessById(@Param("patientId") int patientId,@Param("doctorId") int doctorId);
 	 
 }
