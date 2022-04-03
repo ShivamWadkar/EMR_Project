@@ -158,7 +158,7 @@ public class DocumentController {
 			
 			Access isValid = arepo.getAccessById(patientId, doctor.getId());
 			
-			if(isValid != null) {
+			if(isValid != null && isValid.getAccessStatus() == 1) {
 				
 				List<Document> files = dao.getAllDocuments(patientId);
 				

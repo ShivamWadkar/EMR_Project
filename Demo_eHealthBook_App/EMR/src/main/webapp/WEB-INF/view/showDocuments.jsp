@@ -149,9 +149,10 @@
 														</thead>
 														<tbody>
 															<%
+															int count = 1;
 															for (Document doc : docs) {
 																int id = doc.getId() * 8659;
-																int count = 1;
+																
 															%>
 															<tr>
 																<td><%=count%></td>

@@ -167,6 +167,11 @@
 												<div class="card-body pt-0">
 													<table class="table table-bordered">
 														<tr>
+															<th width="30%">User Name</th>
+															<td width="2%">:</td>
+															<td><%= p.getLoginId() %></td>
+														</tr>
+														<tr>
 															<th width="30%">Name</th>
 															<td width="2%">:</td>
 															<td><%=p.getFirstName()%> <%=p.getLastName()%></td>

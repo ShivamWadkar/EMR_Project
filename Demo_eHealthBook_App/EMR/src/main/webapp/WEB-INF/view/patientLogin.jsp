@@ -96,9 +96,9 @@
 				<span class="login100-form-title p-b-37"> Patient's Login </span>
 
 				<div class="wrap-input100 validate-input m-b-20"
-					data-validate="Enter username or email">
+					data-validate="Enter username">
 					<input class="input100" type="text" name="uname"
-						placeholder="username or email"> <span
+						placeholder="username"> <span
 						class="focus-input100"></span>
 				</div>
 				
