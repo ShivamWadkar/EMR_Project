@@ -40,7 +40,7 @@ public class DocumentDao {
 
 	public List<Document> getAllDocuments(int id)
 	{
-		return repo.findAll();
+		return repo.getDocumentById();
 	}
 
 
