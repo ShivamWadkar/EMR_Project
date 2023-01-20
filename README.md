@@ -11,4 +11,4 @@ On the backend to manage the business logic and databases we have used the sprin
 
 
 
-The eHealthBook web application is in Demo_eHealthBook_App
+<b>The eHealthBook web application is in Demo_eHealthBook_App</b>
